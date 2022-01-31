@@ -1,0 +1,114 @@
+.section-promotion {
+  padding: 20px 0;
+
+  .collection-container {
+    display: grid;
+    grid-template-rows: repeat(3, 12rem);
+    grid-template-columns: auto;
+    gap: 1em;
+    margin: 0 15px;
+    max-height: 800px;
+
+    .grid-auto {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: #e3e3e3;
+      padding: 10px;
+
+      .box-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        flex-wrap: wrap;
+        width: 100%;
+        padding: clamp(1rem, 0.45rem + 1.2vw, 2rem);
+
+        button {
+          display: inline-block;
+          padding: clamp(10px, 2vh, 13vw);
+          background-color: black;
+          border: 2px solid black;
+          color: #fff;
+          outline: 0;
+          font-weight: 600;
+          margin-top: 30px;
+          cursor: pointer;
+          transition: all 0.7s ease-in-out;
+
+          &:hover {
+            background-color: #fff;
+            color: black;
+          }
+        }
+      }
+
+      img {
+        height: 100%;
+        width: max(77px, 17%);
+        margin: 0 20px;
+        object-fit: contain;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 440px) {
+    .section-promotion {
+        .collection-container {
+          grid-template-rows: repeat(3, 10rem);
+
+          .grid-auto {
+            flex-direction: row;
+      
+            .box-content {
+              align-items: flex-start;
+      
+              h4 {
+                text-align: center;
+              }
+      
+              button {
+                padding: clamp(12px, 1.5vw, 1rem);
+              }
+            }
+  
+        }
+    }
+}
+
+@media only screen and (min-width: 1340px) {
+    .section-promotion {
+        .collection-container {
+            display: grid;
+            gap: 1em;
+            grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+            grid-template-rows: auto;
+
+            .grid-auto {
+                .box-content {
+                    align-items: flex-start;
+
+                    h4{
+                      font-size: calc(0.35rem + 1.2vw);
+                      max-inline-size: 16ch;
+                    }
+
+                    button {
+                        padding: 15px;
+                        width: max(180px, 60% );
+                    }
+
+                   
+                }
+
+                img{
+                  width: max(77px, 25%);
+                }
+            }
+        }
+    }
+}
+}

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inicio</title>
+  <link rel="stylesheet" href="css/main.css" />
+  <script src="https://kit.fontawesome.com/cc253917bf.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div class="big-container">
+    <header class="main-header">
+      <input type="checkbox" id="menu" />
+      <!-- nav-bar -->
+      <nav class="nav-bar">
+        <ul class="nav-bar__nav-list">
+          <li class="nav-bar__nav-item">
+            <a class="nav-bar__nav-link" href="" id="inicio">Home</a>
+          </li>
+          <li class="nav-bar__nav-item">
+            <a class="nav-bar__nav-link" href="" id="alta">Alta</a>
+          </li>
+          <li class="nav-bar__nav-item">
+            <a class="nav-bar__nav-link" href="" id="contacto">Contacto</a>
+          </li>
+          <li class="nav-bar__nav-item">
+            <a class="nav-bar__nav-link" href="" id="nosotros">Nosotros</a>
+          </li>
+        </ul>
+      </nav>
+      <!-- nav-bar -->
+      <!-- search-bar -->
+      <div class="search-bar">
+        <div class="search-bar__container">
+          <div class="search-bar__logo-container">
+            <span>CONNECTICUS</span>
+          </div>
+        </div>
+
+        <form class="search-bar__form-container">
+         
+          <input class="search-bar__form-search" id="busqueda" type="search" />
+          <label class="search-bar__form-label" for="busqueda">Buscar productos</label>
+          <input class="search-bar__form-submit" type="submit" value="Buscar" />
+        
+        </form>
+        <div class="search-bar__carrito-container">
+          <span class="badge-cart" id="badge-cart">0</span>
+          <a class="search-bar__carrito-link">
+            <i class="fas fa-shopping-cart"></i>
+          </a>
+        </div>
+        <div class="menu-toggle">
+          <label class="menu-toggle__label" for="menu">
+            <span class="menu-toggle__pan-arriba"></span>
+            <span class="menu-toggle__medallon"></span>
+            <span class="menu-toggle__pan-abajo"></span>
+          </label>
+        </div>
+      </div>
+      <!-- search-bar -->
+    </header>
+
+    <!-- --------- VISTA DEL CARRITO ----------- -->
+    <div class="section-carrito">
+
+      <div class="carrito-body"></div>
+      <div class="carrito-footer">
+        <p> Total Compra: $<span class="total">0</span></span></p>
+          <button class="btn-vaciarCarrito" onclick="carritoController.vaciarCarrito()" >VACIAR CARRITO</button> 
+          <!-- " -->
+          <button class="btn-comprar" onclick="carritoController.enviarCarrito()">COMPRAR</button>
+        </div>
+    </div>
+    <!-- --------- VISTA DEL CARRITO ----------- -->
+   
+    <main> </main>
+     <!-- --------- FOOTER ----------- -->
+    <footer class="footer">
+      <div class="container-footer">
+        <div class="sign-up-box">
+          <div class="footer-sign-up">
+            <h3 class="footer-sign-up__title">Newsletter</h3>
+            <p class="footer-sign-up__text">Suscríbete a todas las novedades sobre nuestras últimos ingresos y consigue una exclusivo
+              acceso a compras. Únase a más de 60.000 suscriptores y obtenga un nuevo cupón de descuento todos los sábados.</p>
+          </div>
+          <form class="box-form">
+            <div class="footer-form">
+              <input class="footer-form__search" id="subscribe" type="search" />
+              <label class="footer-form__label" for="subscribe" >Tu email</label>
+              <input class="footer-form__submit" type="submit" value="enviar" />
+            </div>
+            <div class="footer-terms">
+              <input type="checkbox" id="terms" name="terms" value="si">
+              <label for="terms">I have read and agree with the terms of the <a href="#">Privacy Policy</a></label>
+            </div>
+          </form>
+        </div>
+        <div class="box-information">
+          <div class="box-information__flex">
+            <h4>INFORMATION</h4>
+            <ul class="list-info">
+              <li class="list-info__link"><a class="border-animation" href="#">About Us</a></li>
+              <li class="list-info__link"><a class="border-animation" href="#">Support</a></li>
+              <li class="list-info__link"><a class="border-animation" href="#">Warranty</a></li>
+              <li class="list-info__link"><a class="border-animation" href="#">Delivery</a></li>
+              <li class="list-info__link"><a class="border-animation" href="#">Products</a></li>
+            </ul>
+          </div>
+
+          <div class="box-information__flex">
+            <h4>STORE INFORMATION</h4>
+            <ul class="list-info">
+              <li class="list-info__link"><a class="border-animation" href="#">Email</a></li>
+              <li class="list-info__link"><a class="border-animation" href="#">Location</a></li>
+              <li class="list-info__link"><a class="border-animation" href="#">Contact us</a></li>
+
+            </ul>
+          </div>
+
+          <div class="box-information__flex">
+            <h4>SOCIAL</h4>
+            <ul class="list-info">
+              <li class="list-info__link"><a href="#"><span><i class="fab fa-facebook"></i></span></a></li>
+              <li class="list-info__link"><a href="#"><i class="fab fa-twitter-square"></i></a>
+              </li>
+              <li class="list-info__link"><a href="#"><i class="fab fa-instagram"></i></a></li>
+              <li class="list-info__link"><a href="#"><i class="fab fa-whatsapp"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-copy">
+        <p>Copyright &copy 2021, CONNECTICUS, All Rights Reserved</p>
+      </div>
+
+    </footer>
+    <!-- --------- FOOTER ----------- -->   
+  </div>
+  
+ <!-- script librerias -->
+ <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+
+ <!-- clientes http -->
+ <script src="js/client/http.client.js"></script>
+
+ <!-- servicios -->
+ <script src="js/services/products.services.js"></script>
+ <script src="js/services/carrito.services.js"></script>
+
+ <!-- scripts modelos --> 
+ <script src="js/models/carrito.model.js"></script>
+ <script src="js/models/products.model.js"></script>
+ 
+ 
+ <!-- scripts controladores -->
+ <script src="js/controllers/products.js"></script>
+ <script src="js/controllers/carrito.js"></script>
+
+ <!-- scripts menu -->
+  <script src="js/menu/alta.js" id="init-alta"></script>
+  <script src="js/menu/inicio.js"></script>
+  <script src="js/menu/nosotros.js"></script>
+  <script src="js/menu/contacto.js"></script>
+  <script src="js/menu/carrito.js"></script>
+
+  <!-- main script -->
+  <script src="js/main.js"></script>
+  
+</body>
+</html>

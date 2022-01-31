@@ -1,0 +1,54 @@
+/*********************************
+            CAROUSEL
+*********************************/
+.hero{
+ margin-top: 20px;
+
+  .carousel {
+    width: 100%;
+    height: 100%;
+    order: 1;
+
+    .carousel-img {
+      width: 100%;
+      position: relative;
+      height: 100%;
+
+      &__img {
+        width: 100%;
+        height: 100%;
+      }
+
+      &__prev {
+        display: block;
+        position: absolute;
+        left: 5%;
+        top: calc(50% - 40px);
+        color: white;
+        cursor: pointer;
+      }
+      &__next {
+        display: block;
+        position: absolute;
+        right: 5%;
+        top: calc(50% - 40px);
+        color: white;
+        cursor: pointer;
+      }
+    }
+  }
+}
+@media (min-width: 1024px) {
+
+  .hero{
+  
+    .carousel {
+      height: 100%;
+      width: 100%;
+      margin: 0;
+    }
+  }
+}
+
+
+

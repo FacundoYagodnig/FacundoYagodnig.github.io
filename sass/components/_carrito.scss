@@ -1,0 +1,132 @@
+.section-carrito {
+    padding: 5px;
+    user-select: none;
+    overflow: auto;
+    display: block;
+    position: fixed;
+    background-color: #f1f2f3;
+    z-index: 5;
+    top: 56px;
+    right: -300px;
+    width: min(300px, 80%);
+    height: 85%;
+    border-radius: 15px;
+    box-sizing: border-box;
+    transition: all .5s;
+   
+    // box-shadow: .3em .3em 10em .3em rgba(0, 0, 0, 1);
+    &--visible {
+      visibility: visible;
+      display: block;
+        right: 0;
+    }
+
+    &--novisible{
+        display: none;
+    }
+
+    .carrito-container {
+        width: 95%;
+        margin: 10px auto;
+
+        h3 {
+            margin: 10px 10px;
+        }
+    }
+
+    .carrito {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding: 5px;
+
+        .carrito__photo-container{
+           width: 100%;
+           display: flex;
+           justify-content: center;
+           align-items: center;
+        }
+
+        .carrito-photo {
+            max-height: 200px;
+            width: max(200px, 40%);
+            
+        }
+
+        .carrito__info{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+
+            h6{
+                width: 100%;
+                text-align: center;
+            }
+
+            p strong{
+                font-size: .6rem;
+            }
+        }
+    }
+
+    .carrito__container-button{
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        gap: 0.3em;
+    }
+
+    .carrito-container button {
+        display: inline-block;
+        margin: 5px;
+        width: 50%;
+        height: 20px;
+        font-weight: bold;
+        border: none;
+        background-color: rgb(199, 199, 199);
+        cursor: pointer;
+    }
+
+    .carrito-footer{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 0.3em;
+        font-weight: bold;
+
+        p{
+            display: block;
+            width: 100%;
+            text-align: center;
+        }
+
+        .total {
+            width: 100%;
+        }
+
+        button  {
+            font-size: .5rem;
+            display: inline-block;
+            margin: 5px;
+            width: 50%;
+            height: 20px;
+            font-weight: bold;
+            border: none;
+            background-color: rgb(199, 199, 199);
+            cursor: pointer;
+        }
+    }
+}
+
+@media only screen and (min-width: 421px) {
+
+  
+}
+

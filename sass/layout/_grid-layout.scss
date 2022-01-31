@@ -1,0 +1,28 @@
+.big-container {
+  overflow: hidden;
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  grid-template-areas: "header header header header" "hero hero hero hero" "main main main main" "footer footer footer footer";
+
+  header {
+    grid-area: header;
+  }
+
+  main {
+    grid-area: main;
+    margin-top: 30px;
+
+    @media (min-width: 1024px){
+      margin-top: 46px;
+    }
+  }
+
+  footer {
+    grid-area: footer;
+  }
+
+  .hero{
+    grid-area: hero;
+  }
+}

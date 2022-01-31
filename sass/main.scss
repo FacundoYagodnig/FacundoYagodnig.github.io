@@ -1,0 +1,21 @@
+@import "abstracts/variables";
+
+@import "base/reset";
+@import "base/typography";
+@import "base/utilities";
+
+@import "components/card";
+@import "components/carousel";
+@import "components/promotion-section";
+@import "components/carrito";
+
+@import "layout/header";
+@import "layout/grid-layout";
+@import "layout/footer";
+
+@import "pages/inicio";
+@import "pages/alta";
+@import "pages/contacto";
+@import "pages/nosotros";
+@import "pages/proyects";
+

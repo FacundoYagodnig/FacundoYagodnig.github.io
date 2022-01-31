@@ -1,0 +1,44 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+
+
+h2,h3,h4,h5, i{
+  font-size: clamp(1rem, 0.5rem + 0.5vw, 2rem);
+}
+
+
+body {
+  box-sizing: border-box;
+  background-color: #fefefe;
+  line-height: 1.5;
+  font-family: 'Poppins', sans-serif;
+  
+}
+
+a {
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+img{
+  max-width: 100%;
+  max-inline-size: 100%;
+  block-size: auto;
+  aspect-ratio: 2/1;
+  object-fit: cover;
+  object-position: center;
+ 
+  }
+
+
+ul{
+  list-style: none;
+}
+

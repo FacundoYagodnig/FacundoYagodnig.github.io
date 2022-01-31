@@ -1,0 +1,63 @@
+{{#if validos}}
+    <td>Valid data</td>
+{{else}}
+    <td>Invalid data</td>
+{{/if}}
+                
+{{#if productsList.length}}
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Stock</th>
+            <th>Brand</th>
+            <th>Category</th>
+            <th>Details</th>
+            <th>Photo</th>
+            <th>Delivery</th>
+            <th>Action</th>
+        </tr>
+        {{#each productsList}}
+        <tr>
+            <td>{{name}}</td>
+            <td>{{price}}</td>
+            <td>{{stock}}</td>
+            <td>{{brand}}</td>
+            <td>{{category}}</td>
+            <td>{{details}}</td>
+            <td>
+                <img src='img/productos/{{photo}}.jpg' alt={{name}}>
+            </td>
+            {{#if send}}
+                <td>Si</td>
+            {{else}}
+                <td>No</td>
+            {{/if}}
+            <td>
+            {{#if ../validos}}
+                <button onclick="productoController.updateProduct({{id}})">Update</button>
+            {{else}}
+                <button disabled onclick="productoController.updateProduct({{id}})">Update</button>
+            {{/if}}
+                <button onclick="productoController.deleteProduct({{id}})">Delete</button>
+            </td>
+        </tr>
+        {{/each}}
+    </table>
+    {{else}}
+    <h3>No products found</h3>
+{{/if}}
+    
+
+
+
+
+
+
+
+
+
+
+
+
+

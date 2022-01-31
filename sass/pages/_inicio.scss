@@ -1,0 +1,56 @@
+/*SECTION-CARDS*/
+.section-cards {
+  color: white;
+  width: 100%;
+  margin: 40px auto;
+  border: 2px solid #f3f4f8;
+  background-color: #eeeeee;
+
+  h1,
+  p {
+    color: black;
+  }
+
+  &__header {
+    width: 100%;
+    height: auto;
+    text-align: center;
+    line-height: 1.8;
+    margin-bottom: 10px;
+  }
+
+  .cards-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1em;
+  }
+
+  @media (min-width: 768px) {
+    & {
+      width: 80%;
+      margin: 20px auto;
+      border-radius: 5px;
+
+      .cards-container {
+        width: 100%;
+        border-radius: 5px;
+        margin: 0;
+        padding: 10px;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      & {
+        width: 80%;
+        margin: 0 auto;
+
+        .cards-container {
+          justify-content: center;
+          gap: 2em;
+        }
+      }
+    }
+  }
+}

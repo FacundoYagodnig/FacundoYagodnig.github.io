@@ -1,0 +1,92 @@
+<h1>Data Form</h1>
+  <div class="alta-container">
+    <form class="alta-container__form" action="" autocomplete="off">
+
+      <!-- <input type="hidden" name="promocion" value="BLACKMONDAY"> -->
+
+      <div class="input-container">
+        <label class="alta-label" for="name">Name:</label>
+        <input id="name" type="text" name="name" autofocus  minlength="3" maxlength="40" value=""
+          placeholder="Product name">
+        <div class="validator-cartel" id="validator-cartel"></div>
+      </div>
+      
+      <div class="input-container">
+        <label class="alta-label" for="price">Price:</label>
+        <input id="price" type="text" name="price" autofocus  min="0" step=".5" value="">
+        <div class="validator-cartel" id="validator-cartel"></div>
+      </div>
+   
+
+      <div class="input-container">
+        <label class="alta-label" for="stock">Stock:</label>
+        <input id="stock" type="text" name="stock" autofocus  max="1000" value="">
+        <div class="validator-cartel" id="validator-cartel"></div>
+      </div>
+   
+      
+      <div class="input-container">
+        <label class="alta-label" for="brand">Brand:</label>
+        <select id="brand" name="brand">
+          <option value="1">Select a Brand</option>
+          <option value="2">Apple</option>
+          <option value="3">Samsung</option>
+          <option value="4">Lenovo</option>
+          <option value="5">Motorola</option>
+          <option value="6">Xiaomi</option>
+          <option value="7">Sony</option>
+        </select>
+      </div>
+
+      <div class="input-container">
+        <label class="alta-label" for="category">Category:</label>
+        <br>
+        <select id="category" name="category" size="8" value="">
+        <optgroup label="Gaming">
+            <option value="8">TV</option>
+            <option value="9">Consola</option>
+            <option value="10">Juego</option>
+            <option value="11">Joystick</option>
+          </optgroup>
+          <optgroup label="Smart">
+            <option value="12">TV</option>
+            <option value="13">Notebooks</option>
+            <option value="14">Drones</option>
+            <option value="15">Alexa</option>
+          </optgroup>
+          <optgroup label="Smarthpones">
+            <option value="16">Xiaomi</option>
+            <option value="17">Iphone</option>
+            <option value="18">Samsumg</option>
+          </optgroup>
+        </select>
+      </div>
+
+      <div class="input-container">
+        <label class="alta-label" for="foto">Foto:</label>
+        <input type="text" id="foto" name="foto">
+        <div class="validator-cartel" id="validator-cartel"></div>
+      </div>
+       
+
+      <div class="input-container">
+        <label class="alta-label" for="details">Details:</label>
+        <br>
+        <input type="text" id="details" name="details"></input>
+        <div class="validator-cartel" id="validator-cartel"></div>  
+      </div>
+
+      <div class="free-shipping">
+        <input type="checkbox" id="free-shipping" name="free-shipping" value="si">
+        <label class="alta-label" for="free-shipping">Free-shipping</label>
+      </div>
+
+      <div class="alta-submit">
+        <button id="submit-btn" type="submit" value="Send data"></button>
+      </div>
+    </form>
+
+    <hr>
+    <h1>Listado de productos</h1>
+    <div id="product-list"></div>
+  </div>

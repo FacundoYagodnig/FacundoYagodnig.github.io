@@ -5,7 +5,7 @@
     option = null
     option2 = null
     btnSubmit = null
-    validationArray = [false, false, false, false, false, false];
+    validationArray = [false, false, false, false, false];
       
     regExpArray = [
       /^(([A-Z][a-z]{2,20}( [\d]{0,3}){0,3})){0,3}$/,     //nombre
@@ -109,7 +109,7 @@
       else if(input.type == 'checkbox') input.checked = false
   })
     this.btnSubmit.disabled = true;
-    this.validationArray = [false, false, false, false, false, false];
+    this.validationArray = [false, false, false, false, false];
   }
 
   

@@ -134,6 +134,7 @@ class CarritoController extends CarritoModel {
 
     async enviarCarrito() {
         this.sectionCarrito__body.innerHTML = '<h2>Enviando productos...</h2>'
+        await carritoService.saveCarritoService(this.carrito)
         this.vaciarCarrito()
         this.sectionCarrito__body.innerHTML = '<h2>Productos Comprados con exito!</h2>'
     }

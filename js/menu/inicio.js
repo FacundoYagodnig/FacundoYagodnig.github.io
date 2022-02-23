@@ -1,52 +1,99 @@
-
- const  renderCards = async (cards) => {
-  let plantillaHbs = await fetch('plantillas/cards.hbs').then(r => r.text())
+const renderCards = async (cards) => {
+  let plantillaHbs = await fetch("plantillas/cards.hbs").then((r) => r.text());
+  Handlebars.registerHelper("toLocaleString", function (number) {
+    return number.toLocaleString("es-AR");
+  });
   var template = Handlebars.compile(plantillaHbs);
   let html = template({ cards });
   document.getElementById("cards-container").innerHTML = html;
-
-    // const xhr = new XMLHttpRequest();
-    // xhr.open("get", "plantillas/cards.hbs");
-    // xhr.addEventListener("load", () => {
-    //   if (xhr.status == 200) {
-    //     let cardsHbs = xhr.response;
-    //     var template = Handlebars.compile(cardsHbs);
-    //     let html = template({ cards: cards });
-
-    //     document.getElementById("cards-container").innerHTML = html;
-    //   }
-    // });
-    // xhr.send();
 };
 
-// let cards = [
-//   new Card('notebook lenovo', 'con 2 juegos', 'img/productos/notebook-lenovo.jpg'),
-//   new Card('apple iphone 11 pro max', 'con 2 juegos', 'img/productos/apple-iphone-11-pro-max.jpg'),
-//   new Card('camara canon', 'con 2 juegos', 'img/productos/camara-canon.jpg'),
-//   new Card('auriculares sony', 'con 2 juegos', 'img/productos/auriculares-sony.jpg'),
-//   new Card('parlante jbl', 'con 2 juegos', 'img/productos/parlante-jbl.jpg'),
-//   new Card('google nest mini', 'con 2 juegos', 'img/productos/google-nest-mini.jpg'),
-//   new Card('samsung galaxy s21 plus 5g', 'con 2 juegos', 'img/productos/samsung-galaxy-s21-plus-5g.jpg'),
-//   new Card('drone dji', 'con 2 juegos', 'img/productos/drone-dji.jpg'),                   
-//   new Card('notebook lenovo', 'con 2 juegos', 'img/productos/notebook-lenovo.jpg'),      
-//   new Card('dji mavic 2 pro', 'con 2 juegos', 'img/productos/dji-mavic-2-pro.jpg'),       
-//   new Card('camara canon', 'con 2 juegos', 'img/productos/camara-canon.jpg'),             
-//   new Card('chromecast google', 'con 2 juegos', 'img/productos/chromecast-google.jpg'),   
-//   new Card('parlante jbl', 'con 2 juegos', 'img/productos/parlante-jbl.jpg'),             
-//   new Card('google nest-mini', 'con 2 juegos', 'img/productos/google-nest-mini.jpg'),     
-//   new Card('televisor lg', 'con 2 juegos', 'img/productos/televisor-lg.jpg'),             
-//   new Card('drone dji', 'con 2 juegos', 'img/productos/drone-dji.jpg'),    
-// ]
+class Carrousel {
+  startPlay;
+   menuToggle = document.querySelector('.menu-toggle')
+   navbar = document.querySelector('.nav-bar')
+   header = document.querySelector('.manu-header')
+  constructor() {
+    this.carrousel = document.querySelector(".carrousel");
+    this.slider = document.querySelectorAll(".slider");
+    this.imgs = document.querySelector(".slider img");
+    this.prevBtn = document.querySelector(".prev-btn");
+    this.nextBtn = document.querySelector(".next-btn");
+    this.dots = document.querySelectorAll(".dot-icon");
 
+    this.totalLength = this.slider.length;
+    this.slideCounter = 0;
+  }
+  //go next image
+  goNextImage = () => {
+    this.slideCounter++;
+    this.slider.forEach((slide) => {
+      slide.classList.remove("active");
+    });
+    this.dots.forEach((dot) => {
+      dot.classList.remove("active");
+    });
 
+    if (this.slideCounter > this.totalLength - 1) {
+      this.slideCounter = 0;
+    }
+
+    this.slider[this.slideCounter].classList.add("active");
+    this.dots[this.slideCounter].classList.add("active");
+    console.log(this.slideCounter);
+  };
+
+  //go previous image
+  goPreviousImage = () => {
+    this.slideCounter--;
+    this.slider.forEach((slide) => {
+      slide.classList.remove("active");
+    });
+    this.dots.forEach((dot) => {
+      dot.classList.remove("active");
+    });
+
+    if (this.slideCounter < 0) {
+      this.slideCounter = this.totalLength - 1;
+    }
+
+    this.slider[this.slideCounter].classList.add("active");
+    this.dots[this.slideCounter].classList.add("active");
+    console.log(this.slideCounter);
+  };
+
+  //start autoplay
+
+  autoplay = () => {
+    Carrousel.startPlay = setInterval(this.goNextImage, 4000);
+  };
+
+   initCarrousel = async () => {
+    this.nextBtn.addEventListener("click", this.goNextImage);
+    this.prevBtn.addEventListener("click", this.goPreviousImage);
+    this.carrousel.addEventListener("mouseover", () => {
+      clearInterval(Carrousel.startPlay);
+    });
+    this.carrousel.addEventListener("mouseout", () => {
+      this.autoplay();
+    });
+
+    this.autoplay();
+  };
+
+}
 
 
 async function initInicio() {
-  console.warn('initInicio()')
-
-  let products = await productoController.getProducts()
-  await renderCards(products)
+  console.warn("initInicio()");
   
-  document.querySelector('.section-cards__header p').innerHTML = `Se encontraron ${products.length} productos`
- 
+  let products = await productoController.getProducts();
+  await renderCards(products);
+
+  const carrousel2 = new Carrousel();
+  carrousel2.initCarrousel()
+
+  document.querySelector(
+    ".section-cards__header p"
+  ).innerHTML = `Se encontraron ${products.length} productos`;
 }

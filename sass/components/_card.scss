@@ -2,7 +2,7 @@
   outline: none;
   display: flex;
   flex-wrap: wrap;
-  width: 200px;
+  width: 231px;
   height: 320px;
   flex-direction: column;
   overflow: hidden;
@@ -112,39 +112,6 @@
 
   &:hover &__content {
     padding-top: 1em;
-  }
-
-  
-
-  @media (min-width: 768px) {
-    & {
-
-      
-       
-      
-    }
-
-    &__article {
-    }
-    &__image {
-    }
-    &__content {
-    }
-  }
-
-  @media (min-width: 1024px) {
-    & {
-    }
-  }
-
-  @media (min-width: 1250px) {
-    & {
-    }
-  }
-
-  @media (min-width: 1440px) {
-    & {
-    }
   }
 }
 

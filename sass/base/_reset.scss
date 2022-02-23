@@ -6,12 +6,9 @@
   box-sizing: inherit;
 }
 
-
-
 h2,h3,h4,h5, i{
   font-size: clamp(1rem, 0.5rem + 0.5vw, 2rem);
 }
-
 
 body {
   box-sizing: border-box;
@@ -23,7 +20,7 @@ body {
 
 a {
   text-decoration: none;
-  font-size: 0.95rem;
+  font-size: 1.15rem;
   font-weight: 700;
 }
 
@@ -36,7 +33,6 @@ img{
   object-position: center;
  
   }
-
 
 ul{
   list-style: none;

@@ -1,95 +1,75 @@
-.body{
-    background-color: black;
+.body {
+  background-color: black;
 }
 
-.header-nos{
-    width: 100%;
-    height: 45px;
+.header-nos {
+  width: 100%;
+  height: 45px;
 
-    .nav-container{
+  .nav-container {
+    .nav-tabs {
+      background-color: #fff;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 5px;
 
-        .nav-tabs{
-            background-color: #fff;
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            padding: 5px;
-            
-
-           
-                  a {
-                      color: black;
-                  }
-           
-        
-        }  
+      a {
+        color: black;
+      }
     }
+  }
 }
 
-
-
-.main-container{
+.main-container {
   width: 100%;
   height: 100%;
-  display:flex;
+  display: flex;
   justify-content: space-evenly;
   gap: 2em;
   align-items: center;
   flex-direction: column;
 
-    &__content{
-        display: flex;
-        width: 100%;
-        height: 100%;
-        justify-content: space-between;
-        flex-direction: column;
-        align-items: center;
-        flex-wrap: wrap;
-        color: #fff;
-        
-        a{
-            display: block;
-            text-align: center;
-            padding: 1.2em;
-            margin-top: 30px;
-            height: fit-content;
-            color: black;
-            background-color: #fff;
-        }
-    }
-    &__box-img{
-        width: 100%;
-        height: 100%;
-        justify-content: center;
-        align-items: center;
-        display: none;
-       
-        img{
-            margin-top: 10px;
-            height: 400px;
-            width: 400px;
-            border-radius: 100%;
-            
-            
-        }
-    
-    }
-}
+  &__content {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    color: #fff;
 
+    a {
+      display: block;
+      text-align: center;
+      padding: 1.2em;
+      margin-top: 30px;
+      height: fit-content;
+      color: black;
+      background-color: #fff;
+    }
+  }
+  &__box-img {
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    display: none;
+
+    img {
+      margin-top: 10px;
+      height: 400px;
+      width: 400px;
+      border-radius: 100%;
+    }
+  }
+}
 
 @media only screen and (min-width: 820px) {
-
-.main-container{
-
-    
+  .main-container {
     &__box-img {
-            display: flex;
-        }
-
-    
-    
-}
-
-    
-    
+      display: flex;
+    }
+  }
 }

@@ -1,54 +1,81 @@
 /*********************************
             CAROUSEL
 *********************************/
-.hero{
- margin-top: 20px;
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: min(47vw, 1200px);
 
-  .carousel {
+  .carrousel {
     width: 100%;
     height: 100%;
-    order: 1;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
-    .carousel-img {
-      width: 100%;
-      position: relative;
-      height: 100%;
+  .slider {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    // background-color: rgba(221, 205, 205, 0.829);
+    // border-radius: 15px;
+    clip-path: circle(0% at 0 50%); //tapa todas las no active
+    // box-shadow: rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    //  rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  }
 
-      &__img {
-        width: 100%;
-        height: 100%;
-      }
+  .slider img {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
 
-      &__prev {
-        display: block;
-        position: absolute;
-        left: 5%;
-        top: calc(50% - 40px);
-        color: white;
-        cursor: pointer;
-      }
-      &__next {
-        display: block;
-        position: absolute;
-        right: 5%;
-        top: calc(50% - 40px);
-        color: white;
-        cursor: pointer;
-      }
-    }
+  .carrousel .slider.active {
+    clip-path: circle(150% at 0 50%); //solo se muestra el active
+    transition: 2s;
+  }
+
+  .navigation {
+    height: 50px;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .prev-btn,
+  .next-btn {
+    z-index: 9999;
+    cursor: pointer;
+    font-size: 1.5em;
+  }
+
+  .dots-container {
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 50%;
+    position: absolute;
+    bottom: calc(50% + -20vw);
+  }
+
+  .dots-container .dot-icon {
+    z-index: 9999;
+    background: rgba(248, 236, 236, 0.563);
+    width: 100%;
+    height: 10px;
+    margin: 0 6px;
+    cursor: pointer;
+  }
+
+  .dots-container .dot-icon.active {
+    background: #4285f4;
   }
 }
-@media (min-width: 1024px) {
-
-  .hero{
-  
-    .carousel {
-      height: 100%;
-      width: 100%;
-      margin: 0;
-    }
-  }
-}
-
-
-

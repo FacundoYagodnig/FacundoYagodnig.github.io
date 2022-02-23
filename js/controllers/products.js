@@ -1,7 +1,7 @@
 class ProductosController extends ProductModel{
   
     constructor() {
-         super( )
+         super()
          this.saveProduct = this.saveProduct.bind(this)
         }
 
